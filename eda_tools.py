@@ -1,3 +1,4 @@
+import pandas as pd
 def smart_summary(df):
     """
     Resumo inteligente estilo R summary(), adaptado ao tipo de variável.
