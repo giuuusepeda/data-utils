@@ -1,6 +1,12 @@
 def clean_column_names(df):
     """
-    Standardizes column names: lowercase, underscores instead of spaces.
+    Padroniza os nomes das colunas para minúsculas e underscores.
+    
+    Args:
+        df (pd.DataFrame): DataFrame para limpar as colunas.
+        
+    Returns:
+        pd.DataFrame: DataFrame com colunas limpas.
     """
     df.columns = (
         df.columns
