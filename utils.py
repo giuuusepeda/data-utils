@@ -7,7 +7,7 @@ def get_who_data(indicator_code):
     
     Args:
         indicator_code (str): Código do indicador (ex: 'MMR_100000_LB')
-    
+        https://ghoapi.azureedge.net/api/Indicator
     Returns:
         pd.DataFrame: Dados retornados da API como DataFrame
     """
