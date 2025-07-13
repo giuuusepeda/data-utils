@@ -1,5 +1,9 @@
 def save_to_csv(df, filename):
     """
-    Saves a DataFrame to a CSV file without index.
+    Salva um DataFrame como arquivo CSV sem índice.
+    
+    Args:
+        df (pd.DataFrame): DataFrame a ser salvo.
+        filename (str): Nome do arquivo CSV.
     """
     df.to_csv(filename, index=False)
