@@ -17,6 +17,19 @@ def clean_column_names(df):
     )
     return df
 
+import pandas as pd
+
+def drop_empty_columns(df):
+    """
+    Remove todas as colunas completamente vazias de um DataFrame.
+    
+    Args:
+        df (pd.DataFrame): DataFrame de entrada.
+
+    Returns:
+        pd.DataFrame: DataFrame sem colunas vazias.
+    """
+    return df.dropna(axis=1, how='all')
 
 def check_data_quality(df):
     """
