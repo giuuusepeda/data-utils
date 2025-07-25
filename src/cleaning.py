@@ -27,18 +27,6 @@ def clean_column_names2(df):
 
 
 
-def drop_empty_columns(df):
-    """
-    Remove todas as colunas completamente vazias de um DataFrame.
-    
-    Args:
-        df (pd.DataFrame): DataFrame de entrada.
-
-    Returns:
-        pd.DataFrame: DataFrame sem colunas vazias.
-    """
-    return df.dropna(axis=1, how='all')
-
 def check_data_quality(df):
     """
     Exibe informações sobre o DataFrame:
@@ -85,3 +73,16 @@ def fix_column_types(df):
     print("time_dimension_value: convertido para int")
     
     return df
+def drop_constant_columns(df):
+    """
+    Remove colunas onde todos os valores são iguais (constantes).
+    
+    Args:
+        df (pd.DataFrame): DataFrame original.
+        
+    Returns:
+        pd.DataFrame: DataFrame sem colunas constantes.
+    """
+    constant_cols = [col for col in df.columns if df[col].nunique(dropna=False) == 1]
+    print(f"Colunas removidas (constantes): {constant_cols}")
+    return df.drop(columns=constant_cols)
