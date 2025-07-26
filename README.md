@@ -117,8 +117,9 @@ plot_global_trend(df)
 
 ---
 
-## 📬 Contributing
 
-Pull requests are welcome! For major changes, open an issue first to discuss what you would like to change.
+⚠️ This repository is intended for personal portfolio purposes only.  
+Unauthorized use, redistribution, or copying of any part of this content is strictly prohibited.
+
 
 ```
