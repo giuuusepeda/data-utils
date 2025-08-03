@@ -39,8 +39,6 @@ def check_data_quality(df):
     """
     print("\n Info do DataFrame:")
     print(df.info())
-    print("\n Tipos de Dados:")
-    print(df.dtypes)
     print("\n Estatísticas Descritivas:")
     print(df.describe(include='all'))
     print("\n Valores Nulos por Coluna:")
@@ -55,22 +53,17 @@ def fix_column_types(df):
     """
     # Converte para category
     category_cols = [
-        'indicator_code', 'spatial_dim_type', 'spatial_dim',
-        'time_dim_type', 'parent_location_code', 'parent_location'
+        'id', 'spatial_dim',
+        'parent_location_code', 'parent_location'
     ]
     for col in category_cols:
         df[col] = df[col].astype('category')
         print(f"{col}: convertido para category")
     
-    # Converte para datetime
-    date_cols = ['date', 'time_dimension_begin', 'time_dimension_end']
-    for col in date_cols:
-        df[col] = pd.to_datetime(df[col], errors='coerce')
-        print(f"{col}: convertido para datetime")
     
     # Converte ano para int
-    df['time_dimension_value'] = pd.to_numeric(df['time_dimension_value'], errors='coerce')
-    print("time_dimension_value: convertido para int")
+    df['time_dim'] = pd.to_numeric(df['time_dim'], errors='coerce')
+    print("time_dim: convertido para int")
     
     return df
 def drop_constant_columns(df):
